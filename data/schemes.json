@@ -1,1 +1,80 @@
-{}
+{
+  "PM_SVANidhi": {
+    "scheme_id": "PM_SVANidhi",
+    "name_en": "PM Street Vendor's AtmaNirbhar Nidhi",
+    "name_bn": "পিএম স্বনিধি",
+    "name_hi": "पीएम स्वनिधि",
+
+    "target_group": {
+      "en": "Eligible street vendors subject to official scheme rules",
+      "bn": "সরকারি নিয়ম অনুযায়ী যোগ্য পথবিক্রেতা",
+      "hi": "सरकारी नियमों के अनुसार पात्र रेहड़ी-पटरी विक्रेता"
+    },
+
+    "summary": {
+      "en": "A government scheme providing working capital support to eligible street vendors.",
+      "bn": "যোগ্য পথবিক্রেতাদের কর্মরত মূলধন সহায়তার জন্য একটি সরকারি প্রকল্প।",
+      "hi": "पात्र रेहड़ी-पटरी विक्रेताओं को कार्यशील पूंजी सहायता देने वाली सरकारी योजना।"
+    },
+
+    "loan_tranches": {
+      "first_up_to_inr": 15000,
+      "second_up_to_inr": 25000,
+      "third_up_to_inr": 50000
+    },
+
+    "interest_subsidy": {
+      "value": "7% per annum",
+      "note_en": "Subject to official scheme conditions and repayment requirements",
+      "note_bn": "সরকারি প্রকল্পের শর্ত ও পরিশোধের নিয়ম সাপেক্ষে",
+      "note_hi": "सरकारी योजना की शर्तों और पुनर्भुगतान नियमों के अधीन"
+    },
+
+    "verification_required": true,
+    "last_verified": "2026-07-05"
+  },
+
+  "PMEGP": {
+    "scheme_id": "PMEGP",
+    "name_en": "Prime Minister's Employment Generation Programme",
+    "name_bn": "প্রধানমন্ত্রী কর্মসংস্থান সৃষ্টি কর্মসূচি",
+    "name_hi": "प्रधानमंत्री रोजगार सृजन कार्यक्रम",
+
+    "target_group": {
+      "en": "Eligible applicants seeking support for new micro-enterprises",
+      "bn": "নতুন ক্ষুদ্র উদ্যোগের জন্য সহায়তা খুঁজছেন এমন যোগ্য আবেদনকারী",
+      "hi": "नए सूक्ष्म उद्यम के लिए सहायता चाहने वाले पात्र आवेदक"
+    },
+
+    "summary": {
+      "en": "A credit-linked programme supporting eligible new micro-enterprises.",
+      "bn": "যোগ্য নতুন ক্ষুদ্র উদ্যোগকে সহায়তা করার জন্য ঋণ-সংযুক্ত কর্মসূচি।",
+      "hi": "पात्र नए सूक्ष्म उद्यमों को सहायता देने वाला ऋण-संबद्ध कार्यक्रम।"
+    },
+
+    "verification_required": true,
+    "last_verified": "2026-07-05"
+  },
+
+  "Jan_Dhan": {
+    "scheme_id": "Jan_Dhan",
+    "name_en": "Pradhan Mantri Jan-Dhan Yojana",
+    "name_bn": "প্রধানমন্ত্রী জনধন যোজনা",
+    "name_hi": "प्रधानमंत्री जन-धन योजना",
+
+    "target_group": {
+      "en": "People seeking access to formal banking services subject to applicable rules",
+      "bn": "প্রযোজ্য নিয়ম অনুযায়ী আনুষ্ঠানিক ব্যাংকিং পরিষেবা পেতে ইচ্ছুক ব্যক্তি",
+      "hi": "लागू नियमों के अनुसार औपचारिक बैंकिंग सेवाओं तक पहुंच चाहने वाले लोग"
+    },
+
+    "summary": {
+      "en": "A national financial inclusion programme focused on access to banking services.",
+      "bn": "ব্যাংকিং পরিষেবায় প্রবেশাধিকার বাড়ানোর লক্ষ্যে একটি জাতীয় আর্থিক অন্তর্ভুক্তি কর্মসূচি।",
+      "hi": "बैंकिंग सेवाओं तक पहुंच बढ़ाने पर केंद्रित राष्ट्रीय वित्तीय समावेशन कार्यक्रम।"
+    },
+
+    "verification_required": true,
+    "last_verified": "2026-07-05"
+  }
+}
