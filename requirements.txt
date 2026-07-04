@@ -1,0 +1,9 @@
+transformers>=5.5.0
+torch
+accelerate
+librosa
+soundfile
+gradio
+Pillow
+numpy
+huggingface_hub
