@@ -1,6 +1,8 @@
 from src.tools import (
     get_scheme_info,
-    check_svanidhi_eligibility
+    check_svanidhi_eligibility,
+    execute_tool,
+    TOOLS
 )
 
 
@@ -93,3 +95,72 @@ result_invalid = check_svanidhi_eligibility(
 )
 
 print(result_invalid)
+
+
+print("\n" + "=" * 50)
+print("TEST 8: Dispatcher - Scheme Lookup")
+print("=" * 50)
+
+result_dispatch_scheme = execute_tool(
+    "get_scheme_info",
+    {
+        "scheme_name": "PM_SVANidhi",
+        "language": "bn"
+    }
+)
+
+print(result_dispatch_scheme)
+
+
+print("\n" + "=" * 50)
+print("TEST 9: Dispatcher - Eligibility")
+print("=" * 50)
+
+result_dispatch_eligibility = execute_tool(
+    "check_svanidhi_eligibility",
+    {
+        "has_vending_card": True,
+        "has_aadhaar": True,
+        "years_active": 3,
+        "language": "hi"
+    }
+)
+
+print(result_dispatch_eligibility)
+
+
+print("\n" + "=" * 50)
+print("TEST 10: Unknown Tool")
+print("=" * 50)
+
+result_unknown_tool = execute_tool(
+    "fake_tool",
+    {}
+)
+
+print(result_unknown_tool)
+
+
+print("\n" + "=" * 50)
+print("TEST 11: Invalid Tool Arguments")
+print("=" * 50)
+
+result_invalid_args = execute_tool(
+    "get_scheme_info",
+    {
+        "wrong_argument": "hello"
+    }
+)
+
+print(result_invalid_args)
+
+
+print("\n" + "=" * 50)
+print("TEST 12: Tool Definitions")
+print("=" * 50)
+
+for tool in TOOLS:
+    print(
+        "Tool:",
+        tool["function"]["name"]
+    )

@@ -292,3 +292,176 @@ def check_svanidhi_eligibility(
 
         "verification_required": True
     }
+
+
+# Tool definitions for Gemma
+
+TOOLS = [
+    {
+        "type": "function",
+        "function": {
+            "name": "get_scheme_info",
+            "description": (
+                "Retrieve grounded information about a supported "
+                "government scheme from the curated HawkerSathi database."
+            ),
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "scheme_name": {
+                        "type": "string",
+                        "enum": [
+                            "PM_SVANidhi",
+                            "PMEGP",
+                            "Jan_Dhan"
+                        ],
+                        "description": (
+                            "Canonical identifier of the scheme."
+                        )
+                    },
+                    "language": {
+                        "type": "string",
+                        "enum": ["bn", "hi", "en"],
+                        "description": (
+                            "Language for the returned information."
+                        )
+                    }
+                },
+                "required": [
+                    "scheme_name",
+                    "language"
+                ]
+            }
+        }
+    },
+
+    {
+        "type": "function",
+        "function": {
+            "name": "check_svanidhi_eligibility",
+            "description": (
+                "Perform a cautious preliminary pre-screening "
+                "for possible PM SVANidhi support. "
+                "This does not provide official eligibility "
+                "or loan approval."
+            ),
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "has_vending_card": {
+                        "type": "boolean",
+                        "description": (
+                            "Whether the user reports having "
+                            "a vending card."
+                        )
+                    },
+                    "has_aadhaar": {
+                        "type": "boolean",
+                        "description": (
+                            "Whether the user reports having Aadhaar. "
+                            "Collected as context only; it must not by "
+                            "itself determine official eligibility."
+                        )
+                    },
+                    "years_active": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "description": (
+                            "Number of years the user reports "
+                            "being active as a vendor."
+                        )
+                    },
+                    "language": {
+                        "type": "string",
+                        "enum": ["bn", "hi", "en"]
+                    }
+                },
+                "required": [
+                    "has_vending_card",
+                    "has_aadhaar",
+                    "language"
+                ]
+            }
+        }
+    }
+]    
+
+
+# Tool dispatcher
+
+def execute_tool(
+    tool_name: str,
+    arguments: Dict[str, Any]
+) -> Dict[str, Any]:
+    """
+    Execute a supported HawkerSathi tool by name.
+    """
+
+    try:
+        if tool_name == "get_scheme_info":
+            return get_scheme_info(**arguments)
+
+        if tool_name == "check_svanidhi_eligibility":
+            return check_svanidhi_eligibility(**arguments)
+
+        return {
+            "success": False,
+            "error": "unknown_tool",
+            "tool_name": tool_name
+        }
+
+    except TypeError as error:
+        return {
+            "success": False,
+            "error": "invalid_tool_arguments",
+            "tool_name": tool_name,
+            "details": str(error)
+        }
+
+    except Exception as error:
+        return {
+            "success": False,
+            "error": "tool_execution_failed",
+            "tool_name": tool_name,
+            "details": str(error)
+        }
+
+
+# Tool dispatcher
+
+def execute_tool(
+    tool_name: str,
+    arguments: Dict[str, Any]
+) -> Dict[str, Any]:
+    """
+    Execute a supported HawkerSathi tool by name.
+    """
+
+    try:
+        if tool_name == "get_scheme_info":
+            return get_scheme_info(**arguments)
+
+        if tool_name == "check_svanidhi_eligibility":
+            return check_svanidhi_eligibility(**arguments)
+
+        return {
+            "success": False,
+            "error": "unknown_tool",
+            "tool_name": tool_name
+        }
+
+    except TypeError as error:
+        return {
+            "success": False,
+            "error": "invalid_tool_arguments",
+            "tool_name": tool_name,
+            "details": str(error)
+        }
+
+    except Exception as error:
+        return {
+            "success": False,
+            "error": "tool_execution_failed",
+            "tool_name": tool_name,
+            "details": str(error)
+        }
